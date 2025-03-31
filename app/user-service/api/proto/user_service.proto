@@ -84,10 +84,10 @@ message CodeMessage {
 service health {
   rpc Ping(Request) returns(Response) {
     option (google.api.http) = {
-      get: "/ping/{ping}"
+      get: "/health/userservie"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
-      summary: "ping"
+      summary: "ping user servie"
       security: {
         security_requirement: {
           key: "Anonymous";

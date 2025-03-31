@@ -6,10 +6,10 @@
   },
   "tags": [
     {
-      "name": "health"
+      "name": "PostService"
     },
     {
-      "name": "PostService"
+      "name": "health"
     }
   ],
   "schemes": [
@@ -22,15 +22,15 @@
     "application/json"
   ],
   "paths": {
-    "/ping/{ping}": {
+    "/health/postservice": {
       "get": {
-        "summary": "ping",
+        "summary": "ping post service",
         "operationId": "health_Ping",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/pbResponse"
+              "$ref": "#/definitions/post_serviceResponse"
             }
           },
           "default": {
@@ -43,8 +43,8 @@
         "parameters": [
           {
             "name": "ping",
-            "in": "path",
-            "required": true,
+            "in": "query",
+            "required": false,
             "type": "string"
           }
         ],
@@ -66,7 +66,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/pbPostCreateResp"
+              "$ref": "#/definitions/post_servicePostCreateResp"
             }
           },
           "default": {
@@ -89,7 +89,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/pbPostQueryResp"
+              "$ref": "#/definitions/post_servicePostQueryResp"
             }
           },
           "default": {
@@ -119,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/pbCodeMessage"
+              "$ref": "#/definitions/post_serviceCodeMessage"
             }
           },
           "default": {
@@ -149,7 +149,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/pbCodeMessage"
+              "$ref": "#/definitions/post_serviceCodeMessage"
             }
           },
           "default": {
@@ -175,7 +175,7 @@
     }
   },
   "definitions": {
-    "pbCodeMessage": {
+    "post_serviceCodeMessage": {
       "type": "object",
       "properties": {
         "code": {
@@ -187,13 +187,13 @@
         }
       }
     },
-    "pbPostCreateResp": {
+    "post_servicePostCreateResp": {
       "type": "object"
     },
-    "pbPostQueryResp": {
+    "post_servicePostQueryResp": {
       "type": "object"
     },
-    "pbResponse": {
+    "post_serviceResponse": {
       "type": "object",
       "properties": {
         "pong": {

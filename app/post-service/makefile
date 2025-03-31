@@ -20,12 +20,16 @@ validation:
 gateway:
 	protoc --include_imports --proto_path=./api/proto --descriptor_set_out=./api/pb/descriptor.pb post_service.proto
 
+.PHONY: apigateway
+apigateway:
+	protoc --include_imports --proto_path=./api/proto --descriptor_set_out=../api-gateway/protosets/post_service_descriptor.pb post_service.proto
+
 .PHONY: merge
 merge:
 	cd api/proto && sh merge.sh
 
 .PHONY: gen
-gen: go_zero validation gateway swagger_json
+gen: go_zero validation gateway swagger_json apigateway
 
 .PHONY: swagger
 swagger:

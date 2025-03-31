@@ -106,9 +106,9 @@
         ]
       }
     },
-    "/ping/{ping}": {
+    "/health/userservie": {
       "get": {
-        "summary": "ping",
+        "summary": "ping user servie",
         "operationId": "health_Ping",
         "responses": {
           "200": {
@@ -127,8 +127,8 @@
         "parameters": [
           {
             "name": "ping",
-            "in": "path",
-            "required": true,
+            "in": "query",
+            "required": false,
             "type": "string"
           }
         ],

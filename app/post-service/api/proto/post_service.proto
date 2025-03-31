@@ -90,10 +90,10 @@ service PostService {
 service health {
   rpc Ping(Request) returns(Response) {
     option (google.api.http) = {
-      get: "/ping/{ping}"
+      get: "/health/postservice"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
-      summary: "ping"
+      summary: "ping post service"
       security: {
         security_requirement: {
           key: "Anonymous";
