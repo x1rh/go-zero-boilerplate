@@ -8,6 +8,8 @@
 - 启动所有的rpc后，再启动apigateway
 - 目前把所有的数据库model放在全局进行依赖，在日常开发中有少数model会被多个服务依赖
 
-
-
-
+## todo
+- 合并swagger
+- 检查合并的proto文件是否有问题
+- 检查认证逻辑
+- 检查header和metadata传递
