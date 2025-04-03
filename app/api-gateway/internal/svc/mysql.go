@@ -2,7 +2,7 @@ package svc
 
 import (
 	"go-zero-boilerplate/app/api-gateway/internal/config"
-	"go-zero-boilerplate/pkg/zero-contrib/gormx"
+	"github.com/x1rh/pkg/zero-contrib/gormx"
 	"gorm.io/gorm/logger"
 )
 

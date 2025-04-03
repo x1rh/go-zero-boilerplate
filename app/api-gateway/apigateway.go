@@ -8,8 +8,12 @@ import (
 	"go-zero-boilerplate/app/api-gateway/internal/config"
 	"go-zero-boilerplate/app/api-gateway/internal/svc"
 	"go-zero-boilerplate/pkg/zero-contrib/errx"
-	gwx "go-zero-boilerplate/pkg/zero-contrib/gatewayx"
-	"go-zero-boilerplate/pkg/zero-contrib/middleware"
+	// gwx "go-zero-boilerplate/pkg/zero-contrib/gatewayx"
+	// "go-zero-boilerplate/pkg/zero-contrib/middleware"
+
+	gwx "github.com/x1rh/pkg/zero-contrib/gwx"
+	"github.com/x1rh/pkg/zero-contrib/middleware"
+	"github.com/x1rh/pkg/idx/snowflake"
 
 	"github.com/zeromicro/go-zero/gateway"
 	"github.com/zeromicro/go-zero/rest/httpx"
@@ -23,6 +27,8 @@ import (
 var configFile = flag.String("f", "etc/api-gateway.yaml", "the config file")
 
 func init() {
+	snowflake.ID()
+
 	dir, err := os.Getwd()
 	if err != nil {
 		logx.Error(err)

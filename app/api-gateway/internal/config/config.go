@@ -1,8 +1,7 @@
 package config
 
 import (
-	"go-zero-boilerplate/pkg/zero-contrib/jwtx"
-
+	"github.com/x1rh/pkg/zero-contrib/jwtx"
 	"github.com/zeromicro/go-zero/gateway"
 )
 
